@@ -1,0 +1,54 @@
+body {
+  margin: 0;
+  padding: 0;
+  background-color: #565254;
+}
+.app-header {
+  height: 1em;
+  width: 100%;
+  background-color: black;
+}
+.app-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: stretch;
+  min-height: 10em;
+  height: 100%;
+
+  .app-nav {
+    width: 100px;
+    background-color: #7a7d7d;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: stretch;
+
+    .nav-item {
+      height: 3em;
+      background-color: #fffbfe
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+
+      &.active-nav {
+        background-color: #d0cfcf;
+      }
+      &:hover {
+        background-color: #ffffff;
+      }
+    }
+
+  }
+  .main-content {
+    flex: 1;
+    background-color: #565254;
+
+    .screen {
+      margin: 0.1em;
+    }
+  }
+}
+
