@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 
 class Screen1 extends Component {
 
-//   componentWillMount() {
-//     this.props.eventEmitter.emit("navigateScreen", {screenIndex: 1})
-//   }
+ componentwillmount() {
+   this.props.eventemitter.emit("navigatescreen", {screenindex: 1})
+ }
 
   render() {
     return (

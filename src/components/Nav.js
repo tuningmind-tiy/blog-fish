@@ -6,7 +6,6 @@ class Nav extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      greeting: "Hello"
     }
   }
 
@@ -16,7 +15,6 @@ class Nav extends Component {
         <div
           className={this.props.screenIndex === 1 ? "nav-item screen1 active-nav" : "nav-item screen1"}>
           <Link to="/screen1">Screen1</Link>
-          <p>{this.state.greeting}</p>
         </div>
         <div
           className={this.props.screenIndex === 2 ? "nav-item screen2 active-nav" : "nav-item screen2"}>
@@ -24,6 +22,7 @@ class Nav extends Component {
         </div>
         <div
           className={this.props.screenIndex === 3 ? "nav-item screen3 active-nav" : "nav-item screen3"}>
+          <Link to="/screen3">Screen3</Link>
         </div>
       </div>
     )

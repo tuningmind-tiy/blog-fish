@@ -17,55 +17,29 @@ class App extends Component {
    }
  }
 
-//   componentWillMount() {
-//     this.eventEmitter = new EventEmitter()
-// 
-//     this.eventEmitter.addListener("navigateScreen", ({screenIndex}) => {
-//       this.updateScreen({newScreenIndex: screenIndex})
-//     })
-//   }
+ componentWillMount() {
+   this.eventEmitter = new EventEmitter()
+
+   this.eventEmitter.addListener("navigateScreen", ({screenIndex}) => {
+     this.updateScreen({newScreenIndex: screenIndex})
+   })
+ }
   updateScreen({newScreenIndex}) {
     this.setState({screenIndex: newScreenIndex})
   }
+
   render() {
-
-    let ActiveScreen
-
-    if(this.state.screenIndex === 1) {
-      ActiveScreen = <Screen1 />
-    }
-    if(this.state.screenIndex === 2) {
-      ActiveScreen = <Screen2 />
-    }
-    if(this.state.screenIndex === 3) {
-      ActiveScreen = <Screen3 />
-    }
-    
     return (
       <div className="app">
         <div className="app-header"></div>
         <div className="app-wrapper">
-          <div className="app-nav">
-            <div className="nav-item screen1"
-              onClick={(event) => { this.setState({screenIndex: 1})}}
-            >
-              <p>Screen 1</p>
-            </div>
-            <div className="nav-item screen2"
-              onClick={(event) => { this.setState({screenIndex: 2})}}
-            >
-              <p>Screen 2</p>
-            </div>
-            <div className="nav-item screen3"
-              onClick={(event) => { this.setState({screenIndex: 3})}}
-            >
-              <p>Screen 3</p>
-            </div>
-          </div>
-
+          <Nav 
+            eventEmitter={this.eventEmitter}
+            screenIndex={this.state.screenIndex} />
           <div className="main-content">
-            {ActiveScreen}
-
+            {React.cloneElement(this.props.children, {
+              eventEmitter: this.eventEmitter
+            })}
           </div>
         </div> 
      </div>
@@ -73,6 +47,13 @@ class App extends Component {
   }
 }
 ReactDOM.render(
-  <App>nested content</App>,
+  <Router history={browserHistory}>
+    <Route path="/" component={App} >
+      <IndexRoute component={Screen2} />
+      <Route path="/screen1" component={Screen1} />
+      <Route path="/screen2" component={Screen2} />
+      <Route path="/screen3" component={Screen3} />
+    </Route> 
+  </Router>,
   document.getElementById('root')
 );
