@@ -1,12 +1,35 @@
 body {
   margin: 0;
   padding: 0;
-  background-color: #ffffff; }
+  background-color: #ffffff;
+  color: black; }
 
 .app-header {
   height: 3em;
   width: 100%;
-  background-color: black; }
+  background-color: black;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start; }
+  .app-header p {
+    padding: 1em; }
+  .app-header .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch; }
+
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  list-style: none; }
+  ul li {
+    padding: 1em; }
 
 .app-wrapper {
   display: flex;
@@ -38,7 +61,7 @@ body {
   .app-wrapper .main-content {
     flex: 1;
     background-color: #f5f5f5; }
-    .app-wrapper .main-content .screen {
+    .app-wrapper .main-content .post {
       margin: 10px; }
 
 /*# sourceMappingURL=app.css.map */

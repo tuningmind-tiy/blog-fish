@@ -2,9 +2,9 @@ import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Nav from './components/Nav'
 import { EventEmitter } from 'events'
-import Screen1 from './screens/Screen1'
-import Screen2 from './screens/Screen2'
-import Screen3 from './screens/Screen3'
+import Post1 from './posts/Post1'
+import Post2 from './posts/Post2'
+import Post3 from './posts/Post3'
 import './styles/app.css'
 
 class App extends Component {
@@ -12,46 +12,55 @@ class App extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      screenIndex: 1
+      postIndex: 1
     }
   }
 
   componentWillMount() {
     this.eventEmitter = new EventEmitter()
 
-    this.eventEmitter.addListener("navigateScreen", ({screenIndex}) => {
-      this.updateScreen({newScreenIndex: screenIndex})
+    this.eventEmitter.addListener("navigatepost", ({postIndex}) => {
+      this.updatepost({newpostIndex: postIndex})
     })
   }
 
-  updateScreen({newScreenIndex}) {
+  updatepost({newpostIndex}) {
     this.setState({
-      screenIndex: newScreenIndex
+      postIndex: newpostIndex
     })
   }
 
   render() {
-    let ActiveScreen
+    let Activepost
 
-    if(this.state.screenIndex === 1) {
-      ActiveScreen = <Screen1 />
+    if(this.state.postIndex === 1) {
+      Activepost = <Post1 />
     }
-    if(this.state.screenIndex === 2) {
-      ActiveScreen = <Screen2 />
+    if(this.state.postIndex === 2) {
+      Activepost = <Post2 />
     }
-    if(this.state.screenIndex === 3) {
-      ActiveScreen = <Screen3 />
+    if(this.state.postIndex === 3) {
+      Activepost = <Post3 />
     }
 
     return (
       <div className="app">
-        <div className="app-header"></div>
+        <div className="app-header">
+          <p>Blog-Fish</p>
+          <div className="navbar">
+            <ul>
+              <li>posts</li>
+              <li>links</li>
+              <li>about</li>
+            </ul>
+          </div>
+        </div>
         <div className="app-wrapper">
           <Nav 
-            eventEmitter={this.eventEmitter} 
-            screenIndex={this.state.screenIndex}/>
+            eventEmitter={this.eventEmitter}
+            postIndex={this.state.postIndex}/>
           <div className="main-content">
-            {ActiveScreen}
+            {Activepost}
           </div>
 
         </div>
@@ -63,4 +72,4 @@ ReactDOM.render(
   <App>
   </App>,
   document.getElementById('root')
-);
+)

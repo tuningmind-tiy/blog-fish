@@ -2,12 +2,43 @@ body {
   margin: 0;
   padding: 0;
   background-color: #ffffff;
+  color: black;
+
 }
 
 .app-header {
   height: 3em;
   width: 100%;
   background-color: black;
+  color: #ffffff;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+
+  p {
+    padding: 1em;
+  }
+
+  .navbar {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: stretch;
+  }
+}
+
+ul {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+  text-decoration: none;
+  list-style: none;
+
+  li {
+    padding: 1em;
+  }
 }
 
 .app-wrapper {
@@ -50,7 +81,7 @@ body {
     flex: 1;
     background-color: #f5f5f5;
 
-    .screen {
+    .post {
       margin: 10px;
     }
   }
