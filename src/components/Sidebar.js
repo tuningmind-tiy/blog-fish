@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Nav extends Component {
+class Sidebar extends Component {
 
   constructor(props) {
     super(props)
@@ -11,19 +11,19 @@ class Nav extends Component {
 
   render() {
     return (
-      <div className="app-nav">
+      <div className="sidebar">
         <div 
-          className={this.props.postIndex === 1 ? "nav-item post1 active-nav" : "nav-item post1"}
+          className={this.props.postIndex === 1 ? "sidebar-item post active-item" : "sidebar-item post"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 1}) }}>
           <p>post 1</p>
         </div>
         <div
-          className={this.props.postIndex === 2 ? "nav-item post2 active-nav" : "nav-item post2"}
+          className={this.props.postIndex === 2 ? "sidebar-item post active-item" : "sidebar-item post"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 2}) }}>
           <p>post 2</p>
         </div>
         <div 
-          className={this.props.postIndex === 3 ? "nav-item post3 active-nav" : "nav-item post3"}
+          className={this.props.postIndex === 3 ? "sidebar-item post active-item" : "sidebar-item post"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 3}) }}>
           <p>post 3</p>
       
@@ -33,4 +33,4 @@ class Nav extends Component {
   }
 
 }
-module.exports = Nav
+module.exports = Sidebar 

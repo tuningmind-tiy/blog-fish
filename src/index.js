@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
-import Nav from './components/Nav'
+import Sidebar from './components/Sidebar'
 import { EventEmitter } from 'events'
 import Post1 from './posts/Post1'
 import Post2 from './posts/Post2'
@@ -45,24 +45,30 @@ class App extends Component {
 
     return (
       <div className="app">
-        <div className="app-header">
-          <p>Blog-Fish</p>
-          <div className="navbar">
+        <div className="header">
+          <p className="title">Blog-Fish</p>
+          <nav className="navbar">
             <ul>
-              <li>posts</li>
+              <li>posts home</li>
               <li>links</li>
               <li>about</li>
             </ul>
-          </div>
+          </nav>
         </div>
-        <div className="app-wrapper">
-          <Nav 
+        <div className="main">
+          <sidebar> 
+            <Sidebar
             eventEmitter={this.eventEmitter}
             postIndex={this.state.postIndex}/>
-          <div className="main-content">
+          </sidebar>
+          <div className="content">
             {Activepost}
           </div>
-
+        </div>
+        <div className="footer">
+          <p>get this template</p>
+          <p>license MIT with attribution</p>
+          <p>copyright</p>
         </div>
       </div>
     )
