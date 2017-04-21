@@ -1,9 +1,6 @@
 import React, { Component } from 'react'
 
 class Screen3 extends Component {
-  componenetWillMount() {
-    this.props.eventEmitter.emit("navigateScreen", {screenIndex: 3})
-  }
 
   render() {
     return (
