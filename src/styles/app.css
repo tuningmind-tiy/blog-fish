@@ -1,15 +1,20 @@
 * {
   margin: 0;
-  padding: 0; }
-
-body {
+  padding: 0;
   box-sizing: border-box; }
+
+p {
+  padding: 1em; }
+
+h1 {
+  padding: .5em; }
 
 .app {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: stretch; }
+  justify-content: stretch;
+  height: 100vh; }
 
 .header {
   height: 3em;
@@ -21,10 +26,9 @@ body {
   align-items: center;
   justify-content: stretch; }
   .header p {
-    padding: 1em;
-    width: 15%; }
+    flex-grow: 1; }
   .header .navbar {
-    width: 100%; }
+    flex-grow: 4; }
   .header ul {
     display: flex;
     flex-direction: row;
@@ -39,33 +43,39 @@ body {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
-  align-items: stretch; }
-  .main .sidebar {
-    width: 5em;
+  align-items: stretch;
+  flex-grow: 20;
+  background-color: #f5f5f5;
+  min-width: 300px; }
+  .main .content .post {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end; }
+    .main .content .post p {
+      flex-grow: 1; }
+  .main aside {
     background-color: #565254;
     display: flex;
     flex-direction: column;
-    justify-content: flex-start;
-    align-items: stretch; }
-  .main .sidebar-item {
-    height: 60px;
-    width: 5em;
-    background-color: #565254;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center; }
-    .main .sidebar-item.active-item {
-      background-color: #7a7d7d; }
-    .main .sidebar-item:hover {
-      background-color: #d0cfcf; }
-  .main .content {
-    flex: 1;
-    background-color: #f5f5f5;
-    height: 100%; }
-    .main .content .post {
-      margin: 10px; }
+    justify-content: flex-start; }
+    .main aside .aside1 {
+      flex-grow: 1; }
+    .main aside .aside2 {
+      flex-grow: 2;
+      padding: 0; }
+    .main aside .sidebar-item {
+      height: 60px;
+      min-width: 5em;
+      background-color: #565254;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; }
+      .main aside .sidebar-item.active-item {
+        background-color: #7a7d7d; }
+      .main aside .sidebar-item:hover {
+        background-color: #d0cfcf; }
 
 .footer {
   height: 3em;
@@ -74,7 +84,6 @@ body {
   color: #f5f5f5;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center; }
+  justify-content: flex-end; }
 
 /*# sourceMappingURL=app.css.map */

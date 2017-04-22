@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 
-class Sidebar extends Component {
+class Sidebar1 extends Component {
 
   constructor(props) {
     super(props)
@@ -11,26 +11,25 @@ class Sidebar extends Component {
 
   render() {
     return (
-      <div className="sidebar">
+      <aside className="aside1">
         <div 
-          className={this.props.postIndex === 1 ? "sidebar-item post active-item" : "sidebar-item post"}
+          className={this.props.postIndex === 1 ? "sidebar-item active-item" : "sidebar-item"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 1}) }}>
           <p>post 1</p>
         </div>
         <div
-          className={this.props.postIndex === 2 ? "sidebar-item post active-item" : "sidebar-item post"}
+          className={this.props.postIndex === 2 ? "sidebar-item active-item" : "sidebar-item"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 2}) }}>
           <p>post 2</p>
         </div>
         <div 
-          className={this.props.postIndex === 3 ? "sidebar-item post active-item" : "sidebar-item post"}
+          className={this.props.postIndex === 3 ? "sidebar-item active-item" : "sidebar-item"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 3}) }}>
           <p>post 3</p>
-      
         </div>
-      </div>
+      </aside>
     )
   }
 
 }
-module.exports = Sidebar 
+module.exports = Sidebar1 

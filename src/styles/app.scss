@@ -1,10 +1,14 @@
 * {
   margin: 0;
   padding: 0;
+  box-sizing: border-box;
 }
 
-body {
-  box-sizing: border-box;
+p {
+  padding: 1em;
+}
+h1 {
+  padding: .5em;
 }
 
 .app {
@@ -12,6 +16,7 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: stretch;
+  height: 100vh;
 }
 
 .header {
@@ -25,12 +30,11 @@ body {
   justify-content: stretch;
 
   p {
-    padding: 1em;
-    width: 15%;
+    flex-grow: 1;
   }
 
   .navbar {
-    width: 100%;
+    flex-grow: 4;
   }
   ul {
     display: flex;
@@ -46,48 +50,58 @@ body {
   }
 }
 
-
 .main {
   display: flex;
   flex-direction: row;
   justify-content: flex-start;
   align-items: stretch;
+  flex-grow: 20;
+  background-color: #f5f5f5;
+  min-width: 300px;
 
-  .sidebar {
-    width: 5em;
+  .content {
+    .post {
+      display: flex;
+      flex-direction: row;
+      justify-content: flex-end;
+
+      p {
+        flex-grow: 1;
+      }
+    }
+  }
+  aside {
     background-color: #565254;
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: stretch;
-  }
 
-  .sidebar-item {
-    height: 60px;
-    width: 5em;
-    background-color: #565254;
-    cursor: pointer;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-
-    &.active-item {
-      background-color: #7a7d7d;
+    .aside1{
+      flex-grow: 1;
     }
 
-    &:hover {
-      background-color: #d0cfcf;
+    .aside2{
+      flex-grow: 2;
+      padding:0;
     }
-  }
 
-  .content {
-    flex: 1;
-    background-color: #f5f5f5;
-    height: 100%;
+    .sidebar-item {
+      height: 60px;
+      min-width: 5em;
+      background-color: #565254;
+      cursor: pointer;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
 
-    .post {
-      margin: 10px;
+      &.active-item {
+        background-color: #7a7d7d;
+      }
+
+      &:hover {
+        background-color: #d0cfcf;
+      }
     }
   }
 }
@@ -99,11 +113,6 @@ body {
   color: #f5f5f5;
   display: flex;
   flex-direction: row;
-  justify-content: space-around;
-  align-items: center;
-
-  p {
-  
-  }
+  justify-content: flex-end;
 }
 
