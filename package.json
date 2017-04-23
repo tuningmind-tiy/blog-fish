@@ -11,6 +11,7 @@
     "react-dom": "^15.5.4",
     "react-router": "^4.1.1"
   },
+  "homepage": "http://tiy-tuningmind.github.io/blog-fish",
   "devDependencies": {
     "react-scripts": "0.9.5"
   },
