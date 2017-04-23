@@ -1,10 +1,14 @@
 import React, { Component } from 'react'
 import ReactDOM from 'react-dom'
 import Sidebar1 from './components/Sidebar1'
+import Sidebar2 from './components/Sidebar2'
 import { EventEmitter } from 'events'
 import Post1 from './posts/Post1'
 import Post2 from './posts/Post2'
 import Post3 from './posts/Post3'
+import Post4 from './posts/Post4'
+import Post5 from './posts/Post5'
+import Post6 from './posts/Post6'
 import './styles/app.css'
 
 class App extends Component {
@@ -33,14 +37,23 @@ class App extends Component {
   render() {
     let Activepost
 
-    if(this.state.postIndex === 1) {
+    if (this.state.postIndex === 1) {
       Activepost = <Post1 />
     }
-    if(this.state.postIndex === 2) {
+    if (this.state.postIndex === 2) {
       Activepost = <Post2 />
     }
-    if(this.state.postIndex === 3) {
+    if (this.state.postIndex === 3) {
       Activepost = <Post3 />
+    }
+    if (this.state.postIndex === 4) {
+      Activepost = <Post4 />
+    }
+    if (this.state.postIndex === 5) {
+      Activepost = <Post5 />
+    }
+    if (this.state.postIndex === 6) {
+      Activepost = <Post6 />
     }
 
     return (
@@ -64,10 +77,7 @@ class App extends Component {
           </div>
           <aside className="aside2">
             <p>tags</p>
-            <p>Alice</p>
-            <p>considering</p>
-            <p>remarkable</p>
-            <p>marmalade</p>
+            <Sidebar2/>
           </aside>
         </div>
         <div className="footer">

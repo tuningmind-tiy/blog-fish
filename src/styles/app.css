@@ -39,6 +39,10 @@ h1 {
     .header ul li {
       padding: 1em; }
 
+img {
+  height: 100px;
+  width: auto; }
+
 .main {
   display: flex;
   flex-direction: row;
@@ -52,7 +56,7 @@ h1 {
     flex-direction: row;
     justify-content: flex-end; }
     .main .content .post p {
-      flex-grow: 1; }
+      flex-grow: 2; }
   .main aside {
     background-color: #565254;
     display: flex;
@@ -61,7 +65,7 @@ h1 {
     .main aside .aside1 {
       flex-grow: 1; }
     .main aside .aside2 {
-      flex-grow: 2;
+      flex-grow: 3;
       padding: 0; }
     .main aside .sidebar-item {
       height: 60px;
