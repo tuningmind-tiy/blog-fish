@@ -70,7 +70,7 @@ img {
       justify-content: flex-end;
 
       p {
-        flex-grow: 2;
+        flex-grow: 1;
       }
     }
   }
@@ -85,8 +85,8 @@ img {
     }
 
     .aside2{
-      flex-grow: 3;
-      padding:0;
+      flex-grow: 1;
+      padding: 10px;
     }
 
     .sidebar-item {

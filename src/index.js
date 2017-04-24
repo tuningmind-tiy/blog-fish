@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import ReactDOM from 'react-dom'
+import { render } from 'react-dom'
 import Sidebar1 from './components/Sidebar1'
 import Sidebar2 from './components/Sidebar2'
 import { EventEmitter } from 'events'
@@ -25,6 +25,16 @@ class App extends Component {
 
     this.eventEmitter.addListener("navigatepost", ({postIndex}) => {
       this.updatepost({newpostIndex: postIndex})
+    })
+
+    this.eventEmitter.addListener("choosetag", ({tag}) => {
+      this.updatetag({newtag: tag})
+    })
+  }
+
+  updatetag({newtag}) {
+    this.setState({
+      tag: newtag
     })
   }
 
@@ -71,13 +81,13 @@ class App extends Component {
         <div className="main">
           <Sidebar1
           eventEmitter={this.eventEmitter}
-          postIndex={this.state.postIndex}/>
+          postIndex={this.state.postIndex} />
           <div className="content">
             {Activepost}
           </div>
           <aside className="aside2">
             <p>tags</p>
-            <Sidebar2/>
+            <Sidebar2 />
           </aside>
         </div>
         <div className="footer">
@@ -87,7 +97,7 @@ class App extends Component {
     )
   }
 }
-ReactDOM.render(
+render(
   <App>
   </App>,
   document.getElementById('root')

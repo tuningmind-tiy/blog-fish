@@ -56,7 +56,7 @@ img {
     flex-direction: row;
     justify-content: flex-end; }
     .main .content .post p {
-      flex-grow: 2; }
+      flex-grow: 1; }
   .main aside {
     background-color: #565254;
     display: flex;
@@ -65,8 +65,8 @@ img {
     .main aside .aside1 {
       flex-grow: 1; }
     .main aside .aside2 {
-      flex-grow: 3;
-      padding: 0; }
+      flex-grow: 1;
+      padding: 10px; }
     .main aside .sidebar-item {
       height: 60px;
       min-width: 5em;
