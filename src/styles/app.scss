@@ -53,6 +53,10 @@ img {
   height: 100px;
   width: auto;
 }
+span {
+  font-style: italic;
+  padding-right: 5px;
+}
 
 .main {
   display: flex;
@@ -64,6 +68,7 @@ img {
   min-width: 300px;
 
   .content {
+    min-width: 82vw;
     .post {
       display: flex;
       flex-direction: row;
@@ -79,9 +84,10 @@ img {
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-
+    height: 90vh;
     .aside1{
       flex-grow: 1;
+      min-width: 10vw;
     }
 
     .aside2{
@@ -119,4 +125,3 @@ img {
   flex-direction: row;
   justify-content: flex-end;
 }
-
