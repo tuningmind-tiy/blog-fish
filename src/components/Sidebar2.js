@@ -49,4 +49,4 @@ class Sidebar2 extends Component {
   }
 
 }
-module.exports = Sidebar2 
+module.exports = Sidebar2
