@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import PostsHome from './components/PostsHome'
 
 class Sidebar1 extends Component {
 
@@ -11,7 +12,7 @@ class Sidebar1 extends Component {
 
   render() {
     return (
-      <aside className="aside1">
+      <aside className="aside1" id="sidebar1">
         <div
           className={this.props.postIndex === 1 ? "sidebar-item active-item" : "sidebar-item"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 1}) }}>
