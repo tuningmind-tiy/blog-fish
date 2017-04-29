@@ -1,11 +1,11 @@
 import React, { Component } from 'react'
-import Post from '../components/Post.js'
+import Post from '../components/Post'
 
 class Home extends Component {
   render() {
     const posts = this.props.posts
     return (
-      <div id="home">
+      <div>
         {
           posts.map((p, i) => (
             <Post key={i} post={p}/>
