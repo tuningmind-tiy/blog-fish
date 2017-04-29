@@ -11,36 +11,21 @@ class Sidebar1 extends Component {
 
   render() {
     return (
-      <aside className="aside1">
+      <aside id="sidebar">
         <div
-          className={this.props.postIndex === 1 ? "sidebar-item active-item" : "sidebar-item"}
+          className={this.props.postIndex === 1 ? "item active" : "item"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 1}) }}>
-          <p>post 1</p>
+          <p>April 2017</p>
         </div>
         <div
-          className={this.props.postIndex === 2 ? "sidebar-item active-item" : "sidebar-item"}
+          className={this.props.postIndex === 2 ? "item active" : "item"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 2}) }}>
-          <p>post 2</p>
+          <p>March 2017</p>
         </div>
         <div
-          className={this.props.postIndex === 3 ? "sidebar-item active-item" : "sidebar-item"}
+          className={this.props.postIndex === 3 ? "item active" : "item"}
           onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 3}) }}>
-          <p>post 3</p>
-        </div>
-        <div
-          className={this.props.postIndex === 4 ? "sidebar-item active-item" : "sidebar-item"}
-          onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 4}) }}>
-          <p>post 4</p>
-        </div>
-        <div
-          className={this.props.postIndex === 5 ? "sidebar-item active-item" : "sidebar-item"}
-          onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 5}) }}>
-          <p>post 5</p>
-        </div>
-        <div
-          className={this.props.postIndex === 6 ? "sidebar-item active-item" : "sidebar-item"}
-          onClick={(event) => { this.props.eventEmitter.emit("navigatepost", {postIndex: 6}) }}>
-          <p>post 6</p>
+          <p>Feb 2017</p>
         </div>
       </aside>
     )
