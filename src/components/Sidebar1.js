@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-import PostsHome from './components/PostsHome'
 
 class Sidebar1 extends Component {
 
