@@ -3,7 +3,6 @@ import Post from '../components/Post.js'
 
 class Home extends Component {
   render() {
-    console.log("Home.js has: ", this.props)
     const posts = this.props.posts
     return (
       <div id="home">

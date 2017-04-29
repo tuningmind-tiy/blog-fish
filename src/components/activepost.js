@@ -1,8 +1,5 @@
 import React, { Component } from 'react'
 import { EventEmitter } from 'events'
-import Post1 from './posts/Post1'
-import Post2 from './posts/Post2'
-import Post3 from './posts/Post3'
 
 class PostsHome extends Component {
 
@@ -18,16 +15,6 @@ class PostsHome extends Component {
 
     this.eventEmitter.addListener("navigatepost", ({postIndex}) => {
       this.updatepost({newpostIndex: postIndex})
-    })
-
-    this.eventEmitter.addListener("choosetag", ({tag}) => {
-      this.updatetag({newtag: tag})
-    })
-  }
-
-  updatetag({newtag}) {
-    this.setState({
-      tag: newtag
     })
   }
 
@@ -52,23 +39,16 @@ class PostsHome extends Component {
 
     return (
       <div className="app">
-       <Header />
+        <Header />
         <div className="main">
-          <div id="sidebar1">
-            <Sidebar1
-              eventEmitter={this.eventEmitter}
-              postIndex={this.state.postIndex} />
-          </div>
-          <div className="content">
+          <Sidebar1
+            eventEmitter={this.eventEmitter}
+            postIndex={this.state.postIndex} />
+          <div id="content">
             {Activepost}
           </div>
-          <div id="sidebar2">
-            <Sidebar2 />
-          </div>
         </div>
-        <div className="footer">
-          <p>something in the footer</p>
-        </div>
+        <div id="footer"><p>something in the footer</p></div>
       </div>
     )
   }

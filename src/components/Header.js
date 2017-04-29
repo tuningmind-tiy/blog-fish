@@ -8,7 +8,7 @@ class Header extends Component {
           <p className="title">Blog-Fish</p>
           <nav className="navbar">
             <ul>
-              <li onClick={(e) => { console.log("CLICKED") }} >posts</li>
+              <li onClick={(e) => { console.log("CLICKED") }} >home</li>
               <li>links</li>
               <li>about</li>
             </ul>

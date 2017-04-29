@@ -6,7 +6,8 @@ class Post extends Component {
     const post = this.props.post
     return (
       <div>
-        <h1>{post.date} {post.title} </h1>
+        <p className="tags">date: {post.date}</p>
+        <h1>{post.title} </h1>
         <div className="post">
           <p>
             {post.guts}
