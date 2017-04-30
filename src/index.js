@@ -31,6 +31,7 @@ class App extends Component {
     this.setState({
       screenIndex: newScreenIndex
     })
+      console.log("this.state.screenIndex in index.js", this.state.screenIndex)
   }
 
   render(){
@@ -53,12 +54,16 @@ class App extends Component {
         <div className="main">
           <Sidebar1
             eventEmitter={this.eventEmitter}
-            postIndex={this.state.postIndex} />
+            screenIndex={this.state.screenIndex} />
           <div id="content" style={{backgroundImage}}>
               <div>{ ActiveScreen }</div>
           </div>
         </div>
-        <div id="footer"><p>Blog created by tuningmind</p></div>
+        <div id="footer">
+          <p>Blog created by
+            <span className="italic">tuningmind</span>
+          </p>
+        </div>
       </div>
     )
   }
