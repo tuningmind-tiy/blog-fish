@@ -61,6 +61,7 @@ h1 {
 
       &:hover {
         background-color: #d0cfcf;
+        color: black;
       }
     }
   }
@@ -88,7 +89,7 @@ img {
   min-height: 90vh;
 
   #content {
-    min-width: 82vw;
+    min-width: 90vw;
     min-height: 90vh;
     .post {
       display: flex;
@@ -130,10 +131,16 @@ aside {
 
     &.active {
       background-color: #7a7d7d;
+      p {
+        color: black;
+      }
     }
 
     &:hover {
       background-color: #d0cfcf;
+      p {
+        color: black;
+      }
     }
   }
 }

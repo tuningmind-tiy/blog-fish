@@ -15,7 +15,7 @@ class App extends Component {
     super(props)
     this.state = {
       posts: Posts.posts,
-      screenIndex: 1
+      screenIndex: "home" 
     }
   }
 
@@ -37,13 +37,13 @@ class App extends Component {
     const backgroundImage =  "background-image: url('./img/diplomystus-dentatus.jpg')"
     let ActiveScreen
 
-    if (this.state.screenIndex === 1) {
+    if (this.state.screenIndex === "home") {
       ActiveScreen = <Home posts={this.state.posts}/>
     }
-    if (this.state.screenIndex === 2) {
+    if (this.state.screenIndex === "link") {
       ActiveScreen = <Links />
     }
-    if (this.state.screenIndex === 3) {
+    if (this.state.screenIndex === "about") {
       ActiveScreen = <About />
     }
     return(
@@ -53,7 +53,7 @@ class App extends Component {
         <div className="main">
           <Sidebar1
             eventEmitter={this.eventEmitter}
-            postIndex={this.state.postIndex} />
+            screenIndex={this.state.screenIndex} />
           <div id="content" style={{backgroundImage}}>
               <div>{ ActiveScreen }</div>
           </div>
