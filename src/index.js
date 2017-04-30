@@ -9,6 +9,7 @@ import Sidebar1 from './components/Sidebar1'
 import './styles/app.css'
 import Posts from './posts.js'
 
+
 class App extends Component {
   constructor(props) {
     super(props)
@@ -33,6 +34,7 @@ class App extends Component {
   }
 
   render(){
+    const backgroundImage =  "background-image: url('./img/diplomystus-dentatus.jpg')"
     let ActiveScreen
 
     if (this.state.screenIndex === 1) {
@@ -44,7 +46,6 @@ class App extends Component {
     if (this.state.screenIndex === 3) {
       ActiveScreen = <About />
     }
-    console.log("ActiveScreen: ", ActiveScreen)
     return(
       <div className="app">
         <Header eventEmitter={this.eventEmitter}
@@ -53,9 +54,11 @@ class App extends Component {
           <Sidebar1
             eventEmitter={this.eventEmitter}
             postIndex={this.state.postIndex} />
-          <div id="content">{ ActiveScreen }</div>
+          <div id="content" style={{backgroundImage}}>
+              <div>{ ActiveScreen }</div>
+          </div>
         </div>
-        <div id="footer"><p>something in the footer</p></div>
+        <div id="footer"><p>Blog created by tuningmind</p></div>
       </div>
     )
   }
