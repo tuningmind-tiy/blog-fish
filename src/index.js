@@ -40,7 +40,7 @@ class App extends Component {
     if (this.state.screenIndex === "home") {
       ActiveScreen = <Home posts={this.state.posts}/>
     }
-    if (this.state.screenIndex === "link") {
+    if (this.state.screenIndex === "links") {
       ActiveScreen = <Links />
     }
     if (this.state.screenIndex === "about") {

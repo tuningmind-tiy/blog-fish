@@ -3,7 +3,7 @@ import React, { Component } from 'react'
 class Links extends Component {
   render() {
     return (
-      <div> LINKS </div>
+      <div className="shout"> LINKS </div>
     )
   }
 }
