@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import { render } from 'react-dom'
+import { EventEmitter } from 'events'
 import Header from './components/Header'
 import Home from './components/Home'
 import Links from './components/Links'
@@ -15,6 +16,14 @@ class App extends Component {
       posts: Posts.posts,
       screenIndex: 1
     }
+  }
+
+  componentWillMount() {
+    this.eventEmitter = new EventEmitter()
+
+    this.eventEmitter.addListener("navigateScreen", ({screenIndex}) => {
+      this.updateScreen({newScreenIndex: screenIndex})
+    })
   }
 
   updateScreen(newScreenIndex) {
@@ -38,7 +47,8 @@ class App extends Component {
     console.log("ActiveScreen: ", ActiveScreen)
     return(
       <div className="app">
-        <Header />
+        <Header eventEmitter={this.eventEmitter}
+                screenIndex={this.state.screenIndex}/>
         <div className="main">
           <Sidebar1
             eventEmitter={this.eventEmitter}

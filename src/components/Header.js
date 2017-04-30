@@ -4,6 +4,7 @@ class Header extends Component {
   constructor(props) {
     super(props)
     this.state = {
+      postIndex: 1
     }
   }
 
@@ -13,9 +14,9 @@ class Header extends Component {
           <p className="title">Blog-Fish</p>
           <nav className="navbar">
             <ul>
-              <li onClick={(e) => { this.updateScreen(1) }}>home</li>
-              <li onClick={(e) => { this.updateScreen(2) }}>links</li>
-              <li onClick={(e) => { this.updateScreen(3) }}>about</li>
+              <li onClick={(e) => { this.props.eventEmitter.emit("navigateScreen", {screenIndex: 1}) }}>home</li>
+              <li onClick={(e) => { this.props.eventEmitter.emit("navigateScreen", {screenIndex: 2}) }}>links</li>
+              <li onClick={(e) => { this.props.eventEmitter.emit("navigateScreen", {screenIndex: 3}) }}>about</li>
             </ul>
           </nav>
         </div>
