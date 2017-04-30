@@ -15,7 +15,7 @@ class App extends Component {
     super(props)
     this.state = {
       posts: Posts.posts,
-      screenIndex: "home" 
+      screenIndex: "home"
     }
   }
 
@@ -27,14 +27,14 @@ class App extends Component {
     })
   }
 
-  updateScreen(newScreenIndex) {
+  updateScreen({newScreenIndex}) {
     this.setState({
       screenIndex: newScreenIndex
     })
   }
 
   render(){
-    const backgroundImage =  "background-image: url('./img/diplomystus-dentatus.jpg')"
+    const backgroundImage =  "url('../img/diplomystus-dentatus.jpg')"
     let ActiveScreen
 
     if (this.state.screenIndex === "home") {
