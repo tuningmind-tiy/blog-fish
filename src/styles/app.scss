@@ -20,7 +20,7 @@ h1 {
   color: #383838;
 }
 .tags {
-  font-size: .6em;
+  font-size: .8em;
   font-style: italic;
   color: #383838;
   padding: 1em 0 0 2em;
@@ -63,6 +63,12 @@ h1 {
 
     li {
       padding: 1em;
+      &.active {
+        background-color: #7a7d7d;
+        p {
+          color: black;
+        }
+      }
 
       &:hover {
         background-color: #d0cfcf;
@@ -94,6 +100,7 @@ img {
   min-height: 90vh;
 
   #content {
+    /*background-image: url("../img/diplomystus-dentatus.jpg");*/
     min-width: 90vw;
     min-height: 90vh;
     .post {
@@ -129,11 +136,6 @@ aside {
     justify-content: center;
     align-items: center;
 
-    p {
-      color: #d0cfcf;
-      font-family: serif;
-    }
-
     &.active {
       background-color: #7a7d7d;
       p {
@@ -146,6 +148,11 @@ aside {
       p {
         color: black;
       }
+    }
+
+    p {
+      color: #d0cfcf;
+      font-family: serif;
     }
   }
 }

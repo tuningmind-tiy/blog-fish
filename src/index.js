@@ -5,7 +5,7 @@ import Header from './components/Header'
 import Home from './components/Home'
 import Links from './components/Links'
 import About from './components/About'
-import Sidebar1 from './components/Sidebar1'
+import Sidebar from './components/Sidebar'
 import './styles/app.css'
 import Posts from './posts.js'
 
@@ -34,7 +34,6 @@ class App extends Component {
   }
 
   render(){
-    const backgroundImage =  "url('../img/diplomystus-dentatus.jpg')"
     let ActiveScreen
 
     if (this.state.screenIndex === "home") {
@@ -46,19 +45,27 @@ class App extends Component {
     if (this.state.screenIndex === "about") {
       ActiveScreen = <About />
     }
+    if (this.state.screenIndex === "April") {
+      let filtered = this.state.posts.filter((p) => (p.month === "April"))
+      ActiveScreen = <Home posts={filtered}/>
+    }
     return(
       <div className="app">
         <Header eventEmitter={this.eventEmitter}
                 screenIndex={this.state.screenIndex}/>
         <div className="main">
-          <Sidebar1
+          <Sidebar
             eventEmitter={this.eventEmitter}
             screenIndex={this.state.screenIndex} />
-          <div id="content" style={{backgroundImage}}>
+          <div id="content">
               <div>{ ActiveScreen }</div>
           </div>
         </div>
-        <div id="footer"><p>Blog created by tuningmind</p></div>
+        <div id="footer">
+          <p>This blog created by
+            <span className="italic"> tuningmind</span>
+          </p>
+        </div>
       </div>
     )
   }
